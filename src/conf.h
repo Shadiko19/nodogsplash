@@ -65,8 +65,8 @@
 #define DEFAULT_STATUSPAGE "status.html"
 #define DEFAULT_IMAGESDIR "images"
 #define DEFAULT_PAGESDIR "pages"
-#define DEFAULT_AUTHDIR "nodogsplash_auth"
-#define DEFAULT_DENYDIR "nodogsplash_deny"
+#define DEFAULT_AUTHDIR "auth"
+#define DEFAULT_DENYDIR "deny"
 #define DEFAULT_MACMECHANISM MAC_BLOCK
 #define DEFAULT_SET_MSS 1
 #define DEFAULT_MSS_VALUE 0
