@@ -520,13 +520,18 @@ static int authenticated(struct MHD_Connection *connection,
 			ret = send_redirect_temp(connection, fasurl);
 			free(fasurl);
 			return ret;
-		} else {
-			return show_statuspage(connection, client);
 		}
 	}
+	
+	if (check_authdir_match(url, "status")) {
+		return show_statuspage(connection, client);
+	}
 
+	snprintf(redirect_to_us, 128, "http://%s:%u/status/", config->gw_address, config->gw_port);
+	return send_redirect_temp(connection, redirect_to_us);
+	
 	/* user doesn't wants the splashpage or tried to auth itself */
-	return serve_file(connection, client, url);
+	/* return serve_file(connection, client, url); */
 }
 
 /**
